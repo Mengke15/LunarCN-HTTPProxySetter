@@ -10,7 +10,7 @@ import java.net.ProxySelector;
 import java.net.http.HttpClient;
 
 @Mixin(HttpClient.class)
-public abstract class MixinHttpClient {
+public class MixinHttpClient {
     @Shadow
     public static HttpClient.Builder newBuilder() {
         return HttpClient.newBuilder();
@@ -24,8 +24,8 @@ public abstract class MixinHttpClient {
     public static HttpClient newHttpClient() {
         // add proxy
         HttpClient.Builder builder = newBuilder();
-        String host = System.getProperty("httpProxyHost", null);
-        String port = System.getProperty("httpProxyPort", null);
+        String host = System.getProperty("httpProxyHost", "127.0.0.1"); // proxy host
+        String port = System.getProperty("httpProxyPort", "8080"); // proxy port
         if (host != null && port != null) {
             // throws NumberFormatEvent
             builder.proxy(ProxySelector.of(new InetSocketAddress(host, Integer.parseInt(port))));
