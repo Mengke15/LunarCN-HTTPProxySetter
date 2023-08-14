@@ -1,0 +1,9 @@
+{
+  "mixinConfigs": [
+    "hps.mixins.json"
+  ],
+  "entrypoints": [
+    "top.lunarclient.ModEntry"
+  ],
+  "hooks": []
+}

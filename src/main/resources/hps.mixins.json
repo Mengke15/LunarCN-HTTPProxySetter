@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "top.lunarclient.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinHttpClient"
+  ]
+}
