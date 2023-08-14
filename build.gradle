@@ -6,11 +6,6 @@ plugins {
 group = 'top.lunarclient'
 version = '1.1-SNAPSHOT'
 
-configurations {
-    include
-    implementation.extendsFrom(include)
-}
-
 minecraft {
     version "1.8.9"
 }
@@ -25,8 +20,4 @@ repositories {
 dependencies {
     compileOnly "org.cubewhy.lunarcn:LunarCnLauncher:build4-pre1-20230730.101506-1"
     compileOnly 'org.spongepowered:mixin:0.8.5'
-
-    // netty
-    include 'io.netty:netty-handler-proxy:4.1.94.Final'
-    include 'org.bouncycastle:bcpkix-jdk15on:1.60'
 }
